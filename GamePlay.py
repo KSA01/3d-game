@@ -5,7 +5,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 import math
-import random
 import Pieces
 import UI
 
@@ -14,6 +13,8 @@ import copy # for copying cubes to CubeList
 #Camera
 import Border
 import Camera
+import secrets
+
 #Camera
 
 score = 0 
@@ -88,10 +89,10 @@ def ProcessEvent(event):
 
     return False
 
-index = random.randint(0, 6)
+index = secrets.SystemRandom().randint(0, 6)
 #NEW
 #Get a random index for the next piece
-nextIndex = random.randint(0, 6)
+nextIndex = secrets.SystemRandom().randint(0, 6)
 #NEW
 
 #Set the next piece display
@@ -201,7 +202,7 @@ def Update(deltaTime, pieces):
 
             #Update index to next index and grab a new next index
             index = nextIndex
-            nextIndex = random.randint(0, 6)
+            nextIndex = secrets.SystemRandom().randint(0, 6)
 
             #Set the next piece display
             icon_idx = nextIndex
